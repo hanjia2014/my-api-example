@@ -1,4 +1,5 @@
 # my-api-example
+
 ## Project Setup
 
 ```
@@ -6,14 +7,17 @@ mkdir express-ts-api
 cd express-ts-api
 npm init -y
 ```
+
 install necessary dependencies
+
 ```
 npm install express
 npm install -D typescript @types/express @types/node ts-node nodemon
 ```
 
 Create a tsconfig.json file
-````
+
+```
 // tsconfig.json
 {
   "compilerOptions": {
@@ -29,18 +33,23 @@ Create a tsconfig.json file
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
-````
+```
+
 Add scripts to package.json for building and running:
-````// package.json (add these scripts)
+
+```// package.json (add these scripts)
 "scripts": {
   "build": "tsc",
   "start": "node dist/app.js",
   "dev": "nodemon --exec ts-node src/app.ts"
 }
-````
+```
+
 ## 2. Create the Express Application:
+
 Create a src directory and an app.ts file inside it:
-````
+
+```
 // src/app.ts
 import express, { Application, Request, Response } from 'express';
 
@@ -71,13 +80,17 @@ app.post('/users', (req: Request<{}, {}, User>, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-````
+```
+
 ## 3. Run the API:
-````
+
+```
 npm run dev
-````
+```
+
 To build and run the compiled Javascript
-````
+
+```
 npm run build
 npm start
-````
+```

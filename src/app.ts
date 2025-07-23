@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from "express";
+import express, { Application, Request, Response } from 'express';
 
 const app: Application = express();
 const port: number = 3003;
@@ -21,9 +21,9 @@ interface IUser {
 app.post('.users', (req: Request<{}, {}, IUser>, res: Response) => {
   const newUser: IUser = req.body;
   console.log('Received new user:', newUser);
-  res.status(201).json({ message: 'User created successfully', user: newUser});
+  res.status(201).json({ message: 'User created successfully', user: newUser });
 });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
-})
+});
